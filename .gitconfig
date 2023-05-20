@@ -1,0 +1,18 @@
+[user]
+	email = edu.hen.fm@gmail.com
+	name = Eduardo Henrique
+	signingkey = B2D1AFD406F328AE
+[init]
+	defaultBranch = main
+[alias]
+	go = !git add . && git commit -m
+	bc = checkout -b
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[filter "lfs"]
+	process = git-lfs filter-process
+	required = true
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
