@@ -137,3 +137,5 @@ unset __conda_setup
 alias v=lvim
 export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
 eval "$(perl -Mlocal::lib)"
+export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"

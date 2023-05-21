@@ -134,3 +134,5 @@ PERL_MB_OPT="--install_base \"/home/eduhenfm/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/eduhenfm/perl5"; export PERL_MM_OPT;
 export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
 eval "$(perl -Mlocal::lib)"
+export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
+eval "$(tmuxifier init -)"
