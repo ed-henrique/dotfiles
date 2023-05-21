@@ -3,12 +3,17 @@
 -- Forum: https://www.reddit.com/r/lunarvim/
 -- Discord: https://discord.com/invite/Xb9B4Ny
 
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.api.nvim_set_keymap("i", "<A-t>", 'copilot#Accept("")', { expr = true, silent = true })
+
 vim.cmd('set clipboard=unnamedplus')
 vim.opt.relativenumber = true
 
 lvim.plugins = {
   { "lunarvim/colorschemes" },
-  { "rose-pine/neovim", name = 'rose-pine'}
+  { "rose-pine/neovim", name = 'rose-pine'},
+  { "github/copilot.vim"},
 }
 
 lvim.colorscheme = "rose-pine"
