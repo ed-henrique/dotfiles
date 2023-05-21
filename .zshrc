@@ -80,6 +80,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 plugins=(
 	git
 	zsh-autosuggestions
+	zsh-syntax-highlighting
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -112,7 +113,6 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-source /home/ed-henrique/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
@@ -134,7 +134,6 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-alias xampp_start='sudo /opt/lampp/lampp start'
-alias xampp_stop='sudo /opt/lampp/lampp stop'
-alias xampp_graph='/opt/lampp/manager-linux-x64.run'
 alias v=lvim
+export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
+eval "$(perl -Mlocal::lib)"

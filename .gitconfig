@@ -1,7 +1,7 @@
 [user]
 	email = edu.hen.fm@gmail.com
 	name = Eduardo Henrique
-	signingkey = B2D1AFD406F328AE
+	signingkey = GPG_KEY
 [init]
 	defaultBranch = main
 [alias]
