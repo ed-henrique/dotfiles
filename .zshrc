@@ -139,3 +139,8 @@ export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
 eval "$(perl -Mlocal::lib)"
 export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
 eval "$(tmuxifier init -)"
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source /home/eduhenfm/Applications/alacritty/extra/completions/alacritty.bash
+alias find_dir_fzf="(selected_dir=\$(find /home/eduhenfm/ -type d | fzf) && tmux new-session -c \"\$selected_dir\")"
+fpath+=${ZDOTDIR:-~}/.zsh_functions

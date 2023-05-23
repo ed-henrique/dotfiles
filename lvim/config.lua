@@ -9,11 +9,22 @@ vim.api.nvim_set_keymap("i", "<A-t>", 'copilot#Accept("")', { expr = true, silen
 
 vim.cmd('set clipboard=unnamedplus')
 vim.opt.relativenumber = true
+vim.opt.textwidth = 90
+vim.opt.colorcolumn = "90"
+vim.opt.wrap = true
+vim.opt.linebreak = true
+
+lvim.transparent_window = true
 
 lvim.plugins = {
   { "lunarvim/colorschemes" },
   { "rose-pine/neovim", name = 'rose-pine'},
   { "github/copilot.vim"},
+  {'nvim-treesitter/nvim-treesitter'},
 }
 
 lvim.colorscheme = "rose-pine"
+
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "marksman" })
+require("lvim.lsp.manager").setup("marksman")
+
