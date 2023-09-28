@@ -1,10 +1,3 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -15,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="awesomepanda"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -78,9 +71,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-	git
-	zsh-autosuggestions
-	zsh-syntax-highlighting
+  git
 )
 
 source $ZSH/oh-my-zsh.sh
@@ -106,41 +97,32 @@ source $ZSH/oh-my-zsh.sh
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# Custom aliases
+alias v=nvim
+alias sss=/home/eduardo/scripts/shut.sh
+
+if [ "$XDG_SESSION_TYPE" = "wayland" ]; then
+  export MOZ_ENABLE_WAYLAND=1
+fi
+
+LIBVA_DRIVER_NAME=iHD
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH=/home/eduardo/bin:$PATH
+export DOCKER_HOST=unix:///run/user/1000/docker.sock
 
-[ -f "/home/ed-henrique/.ghcup/env" ] && source "/home/ed-henrique/.ghcup/env" # ghcup-env
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/ed-henrique/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/ed-henrique/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/ed-henrique/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/ed-henrique/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
-alias v=lvim
-export PERL5LIB=$HOME/perl5/lib/perl5:$PERL5LIB
-eval "$(perl -Mlocal::lib)"
-export PATH="$HOME/.tmux/plugins/tmuxifier/bin:$PATH"
-eval "$(tmuxifier init -)"
+# bun completions
+[ -s "/home/eduardo/.bun/_bun" ] && source "/home/eduardo/.bun/_bun"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-source /home/eduhenfm/Applications/alacritty/extra/completions/alacritty.bash
-alias find_dir_fzf="(selected_dir=\$(find /home/eduhenfm/ -type d | fzf) && tmux new-session -c \"\$selected_dir\")"
-fpath+=${ZDOTDIR:-~}/.zsh_functions
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+source /usr/share/nvm/init-nvm.sh
+
+# opam configuration
+[[ ! -r /home/eduardo/.opam/opam-init/init.zsh ]] || source /home/eduardo/.opam/opam-init/init.zsh  > /dev/null 2> /dev/null

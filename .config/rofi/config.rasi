@@ -1,0 +1,11 @@
+configuration{
+    display-drun: "";
+    show-icons: false;
+    terminal: "alacritty";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+}
+
+@theme "catppuccin-mocha"
+

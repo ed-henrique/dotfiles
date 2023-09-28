@@ -1,18 +1,12 @@
 [user]
 	email = edu.hen.fm@gmail.com
 	name = Eduardo Henrique
-	signingkey = GPG_KEY
+	signingkey = 924276D5F09051F9
 [init]
 	defaultBranch = main
-[alias]
-	go = !git add . && git commit -m
-	bc = checkout -b
 [commit]
 	gpgsign = true
 [tag]
 	gpgsign = true
-[filter "lfs"]
-	process = git-lfs filter-process
-	required = true
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
+[core]
+	editor = nvim
