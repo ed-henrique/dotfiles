@@ -9,10 +9,10 @@ vim.o.hlsearch = false
 vim.wo.number = true
 
 -- Enable mouse mode
-vim.o.mouse = 'a'
+vim.o.mouse = ''
 
 -- Sync clipboard between OS and Neovim.
-vim.o.clipboard = 'unnamedplus'
+vim.o.clipboard = 'unnamed'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -57,17 +57,11 @@ vim.api.nvim_create_autocmd('TextYankPost', {
 
 -- Diagnostic keymaps
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+vim.keymap.set('n', '<leader>z', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
-vim.keymap.set('n', '<leader>bp', '<cmd>bp<CR>', { desc = 'Go to previous buffer' })
-vim.keymap.set('n', '<leader>bn', '<cmd>bn<CR>', { desc = 'Go to next buffer' })
-vim.keymap.set('n', '<leader>bd', '<cmd>bd<CR>', { desc = 'Close buffer' })
-vim.keymap.set('n', '<leader>bl', '<cmd>ls<CR>', { desc = 'List buffers' })
-vim.keymap.set('n', '<leader>w', '<cmd>w<CR>', { desc = 'Save file' })
-vim.keymap.set('n', '<leader>q', '<cmd>q<CR>', { desc = 'Close file' })
-vim.keymap.set('n', '<leader>x', '<cmd>x<CR>', { desc = 'Save file and exit' })
+vim.g.netrw_browse_split = 0
+vim.g.netrw_banner = 0
+vim.g.netrw_winsize = 25
 
-vim.opt.tabstop = 4
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.expandtab = true
+vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
+vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
