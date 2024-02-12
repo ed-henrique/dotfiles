@@ -1,9 +1,9 @@
 {
     "layer": "bottom",
     "position": "top",
-    "width": 1820,
+    "width": 1920,
     "spacing": 20,
-    "margin-top": 50,
+    "margin-top": 0,
 
     "modules-left": ["hyprland/workspaces"],
     "modules-right": ["pulseaudio", "network", "cpu", "memory", "battery", "clock", "tray"],

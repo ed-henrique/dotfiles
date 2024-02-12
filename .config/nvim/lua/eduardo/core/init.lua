@@ -12,7 +12,7 @@ vim.wo.number = true
 vim.o.mouse = ''
 
 -- Sync clipboard between OS and Neovim.
-vim.o.clipboard = 'unnamed'
+vim.o.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.o.breakindent = true
@@ -65,3 +65,13 @@ vim.g.netrw_winsize = 25
 
 vim.keymap.set('v', 'J', ":m '>+1<CR>gv=gv")
 vim.keymap.set('v', 'K', ":m '<-2<CR>gv=gv")
+
+vim.keymap.set({ 'n', 'v' }, '<C-u>', "<C-u>zz")
+vim.keymap.set({ 'n', 'v' }, '<C-d>', "<C-d>zz")
+
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.softtabstop = 2
+vim.opt.expandtab = true
+
+vim.api.nvim_create_autocmd({ "BufWritePre" }, { pattern = { "*.templ" }, callback = vim.lsp.buf.format })

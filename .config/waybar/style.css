@@ -4,7 +4,6 @@
   color: @text;
   font-family: "FiraCode Nerd Font";
   font-size: 12px;
-  border-radius: 20px;
   padding: 3px;
 }
 
@@ -13,7 +12,6 @@ window#waybar {
   background-color: shade(@base, 0.9);
   transition-property: background-color;
   transition-duration: .5s;
-  border-radius: 50px;
 }
 
 #workspaces button.active {

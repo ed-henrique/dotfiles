@@ -6,11 +6,18 @@ return {
       local lspconfig = require 'lspconfig'
       local builtin = require 'telescope.builtin'
 
+      vim.filetype.add({ extension = { templ = 'templ' } })
+
+      lspconfig.ccls.setup {}
       lspconfig.gopls.setup {}
+      lspconfig.html.setup { filetypes = { 'html', 'templ'} }
+      lspconfig.htmx.setup { filetypes = { 'html', 'templ'} }
       lspconfig.lua_ls.setup {}
-      lspconfig.tsserver.setup {}
       lspconfig.tailwindcss.setup {}
-      lspconfig.emmet_language_server.setup { filetypes = { 'css', 'html', 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'svelte' } }
+      lspconfig.templ.setup { filetypes = {'templ'} }
+      lspconfig.tsserver.setup {}
+      lspconfig.intelephense.setup {}
+      lspconfig.emmet_language_server.setup { filetypes = { 'css', 'html', 'javascript', 'javascriptreact', 'templ', 'typescript', 'typescriptreact', 'svelte' }, init_options = { userLanguages = { templ = 'html' } } }
 
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -44,7 +51,6 @@ return {
       'hrsh7th/cmp-nvim-lsp',
       'hrsh7th/cmp-buffer',
       'hrsh7th/cmp-path',
-      'hrsh7th/cmp-cmdline',
       'L3MON4D3/LuaSnip',
       'saadparwaiz1/cmp_luasnip',
     },
@@ -99,7 +105,6 @@ return {
           { name = 'luasnip' },
           { name = 'buffer' },
           { name = 'path' },
-          { name = 'cmdline' },
         },
       }
     end
