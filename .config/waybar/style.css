@@ -1,22 +1,37 @@
 @import "mocha.css";
 
 * {
-  color: @text;
   font-family: "FiraCode Nerd Font";
   font-size: 12px;
-  padding: 3px;
 }
 
 window#waybar {
+  color: @text;
   background: transparent;
-  background-color: shade(@base, 0.9);
+  background-color: shade(@base, 0.1);
   transition-property: background-color;
   transition-duration: .5s;
 }
 
+#workspaces button {
+  color: @text;
+  border-radius: 0px;
+  font-weight: bold;
+  border: none;
+}
+
 #workspaces button.active {
-  color: @red;
-  border-radius: 15px;
+  color: @base;
+  background-color: @red;
+  border-radius: 0px;
+  font-weight: bold;
+  border: none;
+}
+
+#workspaces button:hover {
+  color: @base;
+  background-color: @red;
+  border-radius: 0px;
   font-weight: bold;
   border: none;
 }
