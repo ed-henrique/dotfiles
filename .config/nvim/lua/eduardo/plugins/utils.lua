@@ -78,4 +78,5 @@ return {
       vim.keymap.set('n', '<leader>fc', builtin.grep_string)
     end,
   },
+  'ThePrimeagen/vim-be-good',
 }
