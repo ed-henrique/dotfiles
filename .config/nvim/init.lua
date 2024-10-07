@@ -1,2 +1,2 @@
-require 'eduardo.core'
-require 'eduardo.lazy'
+require('eduardo.core')
+require('eduardo.lazy')

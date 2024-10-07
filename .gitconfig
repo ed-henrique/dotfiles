@@ -1,12 +1,9 @@
 [user]
 	email = edu.hen.fm@gmail.com
-	name = Eduardo Henrique
-	signingkey = 924276D5F09051F9
+	name = Eduardo Henrique Freire Machado
 [init]
 	defaultBranch = main
-[commit]
-	gpgsign = true
-[tag]
-	gpgsign = true
 [core]
 	editor = nvim
+[rerere]
+	enabled = true

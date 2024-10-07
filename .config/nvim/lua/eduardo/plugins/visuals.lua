@@ -4,7 +4,7 @@ return {
     name = 'catppuccin',
     priority = 1000,
     config = function()
-      vim.cmd.colorscheme 'catppuccin-mocha'
+      vim.cmd.colorscheme 'catppuccin-latte'
     end,
   },
   {
@@ -19,9 +19,7 @@ return {
     },
   },
   {
-    'xiyaowong/transparent.nvim',
-  },
-  {
+    -- Adds git related signs to the gutter, as well as utilities for managing changes
     "lewis6991/gitsigns.nvim",
     opts = {
       signs = {
@@ -32,5 +30,5 @@ return {
         changedelete = { text = "~" },
       },
     },
-  }
+  },
 }
