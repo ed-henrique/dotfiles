@@ -4,12 +4,19 @@ local wezterm = require("wezterm")
 -- This will hold the configuration.
 local config = wezterm.config_builder()
 
--- This is where you actually apply your config choices
+-- Projects directory
+local projects_dir = os.getenv("HOME") .. "/Projects"
 
--- For example, changing the color scheme:
+-- Configs
+
+-- Visual
 config.color_scheme = "Catppuccin Latte"
 config.hide_tab_bar_if_only_one_tab = true
-config.default_cwd = "/home/eduardo/Documents/Projects/"
+
+-- Always start terminal in projects dir
+config.default_cwd = projects_dir
+
+-- Always start new terminal in zellij session
 config.default_prog = {
 	"/bin/zsh",
 	"-l",
@@ -17,5 +24,5 @@ config.default_prog = {
 	'zellij --layout "compact" options --theme "catppuccin-latte"',
 }
 
--- and finally, return the configuration to wezterm
+-- return the configuration to wezterm
 return config

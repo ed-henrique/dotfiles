@@ -1,5 +1,6 @@
-# Bash
+# if running bash
 if [ -n "$BASH_VERSION" ]; then
+    # include .bashrc if it exists
     if [ -f "$HOME/.bashrc" ]; then
 	. "$HOME/.bashrc"
     fi
@@ -21,8 +22,3 @@ fi
 # Go
 export PATH="$PATH:$HOME/go/bin"
 export GOBIN="$HOME/go/bin"
-
-# .NET Version Manager
-if [ -f "$HOME/.local/share/dnvm/env" ]; then
-    . "$HOME/.local/share/dnvm/env"
-fi

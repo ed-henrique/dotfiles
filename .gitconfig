@@ -1,9 +1,18 @@
 [user]
 	email = edu.hen.fm@gmail.com
 	name = Eduardo Henrique Freire Machado
+
 [init]
 	defaultBranch = main
+
 [core]
-	editor = nvim
+	editor = hx
+
 [rerere]
 	enabled = true
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgSign = true
