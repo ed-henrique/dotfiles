@@ -1,0 +1,20 @@
+theme = "catppuccin_latte"
+
+[editor]
+line-number = "relative"
+cursorline = true        # Show horizontal line for each cursor position
+mouse = false            # Disable mouse
+rulers = [80, 100]       # Soft limit and hard limit
+
+[editor.indent-guides]
+render = true # Show indent lines
+ 
+[editor.file-picker]
+hidden = false # Show hidden files when picking
+
+# Waiting for issue #401 to go through
+# [editor.persistence]
+# old-files = true
+# commands = true
+# search = true
+# clipboard = true
