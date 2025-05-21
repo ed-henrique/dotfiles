@@ -16,5 +16,26 @@ formatter = { command = "goimports" }
 
 [[language]]
 name = "html"
+file-types = ["html", "vue"]
 language-servers = [{ name = "superhtml", except-features = ["format"] }, "vscode-html-language-server", "tailwindcss-ls", "emmet-lsp"]
 auto-format = true
+
+[[language]]
+name = "python"
+language-servers = [ "ruff" ]
+auto-format = true
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+
+[[language]]
+name = "vue"
+auto-format = true
+formatter = { command = "prettier", args = ["--parser", "vue"] }
+language-servers = ["typescript-language-server"]
+
+[[language-server.typescript-language-server.config.plugins]]
+name = "@vue/typescript-plugin"
+location = "$HOME/.local/opt/@vue/language-server/"
+languages = ["vue"]

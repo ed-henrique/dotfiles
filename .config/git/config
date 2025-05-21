@@ -1,0 +1,81 @@
+[user]
+	email = edu.hen.fm@gmail.com
+	name = Eduardo Henrique Freire Machado
+	signingkey = D424DBE316D97CD2
+
+[core]
+	compression = 9
+	whitespace = error
+	preloadindex = true
+	editor = hx
+
+[init]
+	defaultBranch = main
+
+[rerere]
+	enabled = true
+
+[advice]
+	addEmptyPathspec = false
+	pushNonFastForward = false
+	statusHints = false
+
+[status]
+	branch = true
+	showStash = true
+	showUntrackedFiles = all
+
+[diff]
+	context = 3
+	renames = copies
+	interHunkContext = 10
+
+[pager]
+	diff = diff-so-fancy | $PAGER
+	branch = false
+	tag = false
+
+[diff-so-fancy]
+	markEmptyLines = false
+
+[interactive]
+	diffFilter = diff-so-fancy --patch
+	singlekey = true
+
+[commit]
+	gpgsign = true
+
+[tag]
+	gpgSign = true
+
+[push]
+	autoSetupRemote = true
+	default = current
+	followTags = true
+
+[pull]
+	default = current
+	rebase = true
+
+[rebase]
+	autoStash = true
+	missingCommitsCheck = warn
+
+[log]
+	abrevCommit = true
+
+[branch]
+	sort = -comitterdate
+
+[tag]
+	sort = -taggerdate
+
+[url "git@github.com:"]
+	insteadOf = "gh:"
+
+[url "git@github.com:ed-henrique/"]
+	insteadOf = "ed:"
+
+[url "git@github.com:seplan-rr/"]
+	insteadOf = "seplan:"
+
